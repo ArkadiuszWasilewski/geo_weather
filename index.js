@@ -44,6 +44,8 @@ app.get('/weather/:latlong', async (req, res)=>{
     const apiKey = `${process.env.WEATHER_API_KEY}`;
     const api_url=`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${long}`;
 
+    
+
     const response = await fetch(api_url);
     const jsondata = await response.json();
     res.json(jsondata);
